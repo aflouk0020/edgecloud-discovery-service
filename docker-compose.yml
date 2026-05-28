@@ -1,0 +1,14 @@
+services:
+  edgecloud-discovery-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: edgecloud-discovery-service
+    ports:
+      - "8761:8761"
+    networks:
+      - edgecloud-network
+
+networks:
+  edgecloud-network:
+    driver: bridge
